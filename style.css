@@ -1,50 +1,89 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: white; 
    color: darkred;
 }
-
-/* Header */
 header {
-  background-color:  rgb(173, 169, 169);
-  padding: 15px 0;
+  background-color: rgb(173, 169, 169);
   position: fixed;
-   z-index: 1000;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .header-container {
-  /* max-width: 1200px; */
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 15px 20px;
 }
 
-header a.logo {
-  color: white;
-  font-size: 24px;
+/* Logo */
+header .logo {
+  font-size: 28px; 
   font-weight: bold;
   text-decoration: none;
+  color: white;
 }
 
-header nav a {
-  color: white;
-  margin-left: 20px;
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
   text-decoration: none;
   font-weight: bold;
+  color: white;
+  font-size: 18px;
 }
 
-header nav a:hover {
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 36px; 
+  cursor: pointer;
   color: darkred;
+}
+
+
+@media (max-width: 768px) {
+  
+  .menu-icon {
+    display: block;
+  }
+
+ 
+  nav {
+    display: none;
+    flex-direction: column;
+    background: rgb(173, 169, 169);
+    position: absolute;
+    top: 60px; 
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  
+  #menu-toggle:checked + .menu-icon + nav {
+    display: flex;
+  }
+
+  nav a {
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+  }
 }
 /* Hero Section */
 #hero {
@@ -58,7 +97,9 @@ header nav a:hover {
   background-repeat: no-repeat;
   background-position: right;
   color: white;
+  flex-wrap: wrap;
 }
+
 /* }
 #hero:hover{
   background: linear-gradient(to right, rgb(31, 26, 26),rgba(139, 0, 0, 0.404) ,rgba(0, 0, 0, 0)),  url(./images/unnamed-removebg-preview.png);
@@ -66,11 +107,14 @@ header nav a:hover {
 } */
 
 .hero-text{
+ 
     text-align: left;
-    margin-left: 50px;
+     max-width: 500px;
+    /* margin-left: 50px; */
 }
 
 .hero-text h1 {
+  font-family: 'Poppins', sans-serif;
   font-size: 48px;
   margin: 0;
 }
@@ -99,6 +143,7 @@ header nav a:hover {
 }
 
 .hero-image img {
+   max-width: 100%;
   width: 400px;
   border-radius: 10px;
 }
@@ -180,9 +225,9 @@ header nav a:hover {
 /* Services Section */
 #Services {
   min-height: 100vh;
-  background: linear-gradient(to right, rgb(117, 110, 110), rgb(211, 210, 205),rgb(110, 2, 2));
+  background: linear-gradient(to right, rgb(92, 87, 87), rgb(211, 210, 205),rgb(110, 2, 2));
   padding: 60px 20px;
-  color: rgb(255, 247, 247);
+  color: white;
   position: relative;
   text-align: center;
    margin-top: 0;
@@ -232,7 +277,7 @@ header nav a:hover {
 }
 /* Projects Section */
 #projects {
-  background: linear-gradient(to right, rgb(161, 160, 155), rgba(139, 0, 0, 0.123), rgb(15, 14, 14));
+  background: linear-gradient(to right, rgb(105, 105, 103), rgb(26, 2, 2), rgb(15, 14, 14));
   padding: 60px 20px;
   position: relative;
   text-align: center;
@@ -286,6 +331,7 @@ header nav a:hover {
   justify-content: center;
   position: relative;
   align-items: center;
+  flex-wrap: wrap;
   min-height: 50vh;
       padding: 60px 0;
     }
@@ -301,6 +347,7 @@ header nav a:hover {
     }
 
     .contact-info h1 {
+       font-family: 'Poppins', sans-serif;
       color: rgb(244, 248, 248);
       margin-bottom: 20px;
     }
@@ -352,3 +399,18 @@ header nav a:hover {
       background: rgb(143, 153, 153);
       color: rgb(170, 167, 167);
     }
+    /* responive for small phone */
+    @media (max-width: 480px) {
+  .hero-text h1 { font-size: 28px; }
+  .hero-text h3 { font-size: 16px; }
+  .skills-card, .box, .box-services .soft-skill{ width: 100%; max-width: 280px; }
+  .contact-content { flex-direction: column; gap: 20px; }
+}
+/* responive for tablet */
+@media (max-width: 768px) {
+  header nav { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .hero-text h1 { font-size: 32px; }
+  .hero-text h3 { font-size: 18px; }
+  .about-container { flex-direction: column; text-align: center; }
+  .hero-container, .about-container,.soft-skill, .services-container, .project-container, .contact-content { gap: 20px; }
+}

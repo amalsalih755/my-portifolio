@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         #blogs {
    min-height: 100vh;
-  background: linear-gradient(to bottom, rgb(170, 3, 3), rgb(112, 112, 110));
+  background: linear-gradient(to bottom, rgb(43, 40, 40), rgb(112, 112, 110));
   padding: 60px 20px;
   color: rgb(255, 247, 247);
   position: relative;
@@ -42,6 +43,7 @@
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+  background-color: rgb(136, 224, 224);
 }
 
 .card h3 {
@@ -73,6 +75,32 @@
     </style>
 </head>
 <body>
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo">Amal</a>
+      <input type="checkbox" 
+      id="menu-toggle">
+<label for="menu-toggle"
+ class="menu-icon">&#9776;</label> 
+
+<!-- <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-btn">☰</label> -->
+
+
+      
+      <nav>
+        <a href="./index.html#hero">Home</a>
+        <a href="./index.html#aboutme">About Me</a>
+        <a href="./index.html#skill">Skills</a>
+        <a href="./index.html#Service">Services</a>
+        <a href="./index.html#projects">Projects</a>
+        <a href="./blog.html">Blogs</a>
+        <a href="./index.html#contact">Contact Me</a>
+        <a href="./signup.html">Sign Up</a>
+        <a href="./ login.html">Log In</a>
+      </nav>
+    </div>
+  </header>
     <section id="blogs">
   <h2>My Blogs</h2>
   <div class="container">
